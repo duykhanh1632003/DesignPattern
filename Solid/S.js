@@ -1,3 +1,5 @@
+// Mỗi module hoặc class chỉ nên đảm nhiệm một trách nhiệm duy nhất. Điều này giúp giảm sự phức tạp và dễ dàng bảo trì code.
+
 class Order {
   constructor(userId) {
     this.userId = userId;
@@ -13,7 +15,7 @@ class OrderManager {
 
   createOrder(userId) {
     this.order = new Order(userId);
-    return thí.order;
+    return this.order;
   }
 
   addProduct(product) {
@@ -28,16 +30,14 @@ class OrderManager {
   }
 
   sendOrder() {
-      if (this.isValid) {
-        SendMailOrder.sendMail(order)
+    if (this.isValid) {
+      SendMailOrder.sendMail(order);
     }
   }
 }
 
-class SendMailOrder{
-    sendMail(order) {
-        
-    }
+class SendMailOrder {
+  sendMail(order) {}
 }
 
 const orderManager = new OrderManager();
