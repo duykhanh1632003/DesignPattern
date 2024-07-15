@@ -22,6 +22,7 @@ class ShopeeFacadePattern {
     this.shipping = new Shipping();
     this.fees = new Fees();
   }
+
   calc(price) {
     price = this.discount.calc(price);
     price = this.fees.calc(price);
@@ -32,7 +33,7 @@ class ShopeeFacadePattern {
 
 function buy(price) {
   const shopee = new ShopeeFacadePattern();
-  console.log("price shoppe ", shopee.calc(price));
+  console.log("Final price on Shopee:", shopee.calc(price));
 }
 
 buy(120000);
